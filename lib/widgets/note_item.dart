@@ -8,6 +8,7 @@ class NoteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(16, 24, 12, 24),
+      margin: const EdgeInsets.only(top: 16),
       decoration: BoxDecoration(
         color: Colors.yellow,
         borderRadius: BorderRadius.circular(16),
@@ -31,23 +32,28 @@ class NoteItem extends StatelessWidget {
                     color: Colors.black.withOpacity(0.4), fontSize: 16),
               ),
             ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.delete,
-                color: Colors.black.withOpacity(0.8),
-                size: 28,
-              ),
-            ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 16),
-            child: Text(
-              '<<<date>>>',
-              style: GoogleFonts.poppins(
-                color: Colors.black.withOpacity(0.4),
-                fontSize: 12,
-              ),
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: Row(
+              children: [
+                Text(
+                  '<<<date>>>',
+                  style: GoogleFonts.poppins(
+                    color: Colors.black.withOpacity(0.4),
+                    fontSize: 12,
+                  ),
+                ),
+                const Spacer(),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.delete,
+                    color: Colors.black.withOpacity(0.8),
+                    size: 28,
+                  ),
+                ),
+              ],
             ),
           )
         ],
