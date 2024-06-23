@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
-class AddNoteBottomSheet extends StatelessWidget {
-  const AddNoteBottomSheet({super.key});
+class EditNoteBottomSheet extends StatelessWidget {
+  const EditNoteBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,10 @@ class AddNoteBottomSheet extends StatelessWidget {
           children: [
             SizedBox(
               height: 32,
+            ),
+            Text('Edit Note'),
+            SizedBox(
+              height: 8,
             ),
             CustomTextField(hint: 'title'),
             SizedBox(
@@ -27,7 +31,7 @@ class AddNoteBottomSheet extends StatelessWidget {
               height: 32,
             ),
             CustomButton(
-              text: 'add',
+              text: 'apply',
             )
           ],
         ),
