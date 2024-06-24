@@ -29,7 +29,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formKey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
-  String? title, subTitle;
+  String? title, subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             hint: 'content',
             maxLines: 5,
             onSaved: (value) {
-              subTitle = value;
+              subtitle = value;
             },
           ),
           const SizedBox(
