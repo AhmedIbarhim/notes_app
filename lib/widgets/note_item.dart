@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/edit_note_bottom_sheet.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class NoteItem extends StatelessWidget {
         padding: const EdgeInsets.fromLTRB(16, 24, 12, 24),
         margin: const EdgeInsets.only(top: 8),
         decoration: BoxDecoration(
-          color: Colors.orange[200],
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
@@ -31,7 +34,7 @@ class NoteItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text(
-                'Title',
+                note.title,
                 style: GoogleFonts.poppins(
                   color: Colors.black,
                   fontSize: 20,
@@ -40,7 +43,7 @@ class NoteItem extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
-                  '<<<<<<<<<<subtitle>>>>>>>>>>>',
+                  note.description,
                   style: GoogleFonts.poppins(
                       color: Colors.black.withOpacity(0.4), fontSize: 16),
                 ),
@@ -51,7 +54,7 @@ class NoteItem extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    '<<<date>>>',
+                    note.date,
                     style: GoogleFonts.poppins(
                       color: Colors.black.withOpacity(0.4),
                       fontSize: 12,
