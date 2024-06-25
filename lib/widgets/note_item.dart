@@ -15,12 +15,13 @@ class NoteItem extends StatelessWidget {
     return InkWell(
       onLongPress: () {
         showModalBottomSheet(
+          isScrollControlled: true,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
           context: context,
           builder: (context) {
-            return const EditNoteBottomSheet();
+            return EditNoteBottomSheet(note: note);
           },
         );
       },
