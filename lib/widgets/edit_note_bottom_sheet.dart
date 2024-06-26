@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/view_notes_cubit/view_notes_cubit.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/widgets/colors_list_view.dart';
 import 'package:notes_app/widgets/custom_button.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
@@ -53,6 +54,15 @@ class _EditNoteBottomSheetState extends State<EditNoteBottomSheet> {
             ),
             const SizedBox(
               height: 32,
+            ),
+            SizedBox(
+              height: 50,
+              child: EditColorsListView(
+                note: widget.note,
+              ),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             CustomButton(
               text: 'apply',
